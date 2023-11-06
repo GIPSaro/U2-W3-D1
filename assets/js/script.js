@@ -18,11 +18,11 @@ class User {
   }
   static compareAge(user1, user2) {
     if (user1.age > user2.age) {
-      return `${user1.firstName} ${user1.lastName} è più vecchio di ${user2.firstName} ${user2.lastName}. Questo significa che la persona che viene da ${user1.location} è piu grande della persona che viene da ${user2.location}`;
+      return `${user1.firstName} ${user1.lastName} è più vecchio di ${user2.firstName} ${user2.lastName}. Questo significa che la persona che viene da ${user1.location} è piu grande della persona che viene da ${user2.location}.`;
     } else if (user1.age < user2.age) {
-      return `${user1.firstName} ${user1.lastName} è piu giovane ${user2.firstName} ${user2.lastName}.  Questo significa che la persona che viene da ${user1.location} è piu piccola people della persona che viene da ${user2.location}`;
+      return `${user1.firstName} ${user1.lastName} è piu giovane ${user2.firstName} ${user2.lastName}.  Questo significa che la persona che viene da ${user1.location} è piu piccola people della persona che viene da ${user2.location}.`;
     } else {
-      return `${user1.firstName} ${user1.lastName} e ${user2.firstName} ${user2.lastName} hanno la stessa età. Questo significa che la persona che viene da ${user1.location} ha la stessa età della persona che viene da ${user2.location}`;
+      return `${user1.firstName} ${user1.lastName} e ${user2.firstName} ${user2.lastName} hanno la stessa età. Questo significa che la persona che viene da ${user1.location} ha la stessa età della persona che viene da ${user2.location}.`;
     }
   }
 }
@@ -40,3 +40,16 @@ console.log(utente4.showFullUser());
 console.log(User.compareAge(utente1, utente2));
 console.log(User.compareAge(utente2, utente3));
 console.log(User.compareAge(utente4, utente1));
+
+const lista = document.getElementById("listaUser");
+const compareAge1 = document.createElement("li");
+compareAge1.textContent = User.compareAge(utente1, utente3);
+lista.appendChild(compareAge1);
+
+const compareAge2 = document.createElement("li");
+compareAge2.textContent = User.compareAge(utente2, utente3);
+lista.appendChild(compareAge2);
+
+const compareAge3 = document.createElement("li");
+compareAge3.textContent = User.compareAge(utente4, utente1);
+lista.appendChild(compareAge3);

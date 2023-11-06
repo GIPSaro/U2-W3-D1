@@ -1,3 +1,5 @@
+// Esercizio 1
+
 class User {
   constructor(firstName, lastName, age, location) {
     this.firstName = firstName;
@@ -53,3 +55,58 @@ lista.appendChild(compareAge2);
 const compareAge3 = document.createElement("li");
 compareAge3.textContent = User.compareAge(utente4, utente1);
 lista.appendChild(compareAge3);
+
+// Esercizio 2
+
+class Pet {
+  constructor(petName, ownerName, species, breed) {
+    this.petName = petName;
+    this.ownerName = ownerName;
+    this.species = species;
+    this.breed = breed;
+  }
+}
+
+class Petlist {
+  constructor() {
+    this.pets = [];
+  }
+  addPet(pet) {
+    this.pets.push(pet);
+  }
+}
+
+const addForm = document.getElementById("aggiungiForm");
+const listaAnimali = document.getElementById("listaAnimali");
+const petList = new Petlist();
+addForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const petName = document.getElementById("petName").value;
+  const ownerName = document.getElementById("ownerName").value;
+  const species = document.getElementById("species").value;
+  const breed = document.getElementById("breed").value;
+  const pet = new Pet(petName, ownerName, species, breed);
+  petList.addPet(pet);
+ 
+});
+console.log(petList);
+
+
+
+function aggiornaListaAnimali() {
+  listaAnimali.innerHTML = "";
+  for (const pet of petList.pets) {
+    const petDiv = document.createElement("div");
+    petDiv.innerHTML=
+  }
+}
+
+function checkSameOwner( ){
+
+    let sameOwner = false;
+    const owners ={};
+    for (const pet of petList.pets){
+        if(!owner[pet.ownerName])
+    }
+}

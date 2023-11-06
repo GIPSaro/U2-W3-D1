@@ -107,6 +107,11 @@ function checkSameOwner( ){
     let sameOwner = false;
     const owners ={};
     for (const pet of petList.pets){
-        if(!owner[pet.ownerName])
+        if(!owners[pet.ownerName]){
+            owners[pet.ownerName]=[pet.petName];
+        } else{
+            owners[pet.ownerName].push(pet.petName);
+            sameOwner = true;
+        }
     }
 }
